@@ -8,6 +8,8 @@
     helix.url = "github:helix-editor/helix/master";
   };
 
+
+
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.t34 = nixpkgs.lib.nixosSystem {
 
