@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -80,15 +80,34 @@
     ];
   };
 
-  users.users.akmal = {
-  	isNormalUser = true;
-  	description = "akmal second";
-  	extraGroups = [ "networkmanager" "wheel" ];
-  	packages = with pkgs; [
-  		bat
-  	];
-  };
+programs.git = {
+    enable = true;
+    lfs.enable = true;
 
+    ignores = [
+      ".idea"
+      "node_modules"
+      ".DS_Store"
+      "*.swp"
+    ];
+
+    settings = {
+      user = {
+        name = "akmal";
+        email = "isakulovdev@gmail.com";
+      };
+      init.defaultBranch = "main";
+      core = {
+        editor = "nvim";
+        autocrlf = "input";
+      };
+      commit.gpgsign = true;
+      pull.rebase = true;
+      rebase.autoStash = true;
+      push.autoSetupRemote = true;
+    };
+  };
+  
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -120,6 +139,8 @@
 
 	vscode
 	vscode.fhs
+
+  inputs.helix.packages."${pkgs.system}".helix
 ];
 
   # programs.bash = {
