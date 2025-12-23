@@ -1,9 +1,10 @@
 { config, pkgs, home-manager, ... }:
 
 {
-
   imports = [
-    ./modules/git.nix
+    ../modules/git.nix
+    ../modules/fish.nix
+    ../modules/vscode.nix
   ];
 
   home.username = "t34";

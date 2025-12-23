@@ -1,13 +1,10 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      
     ];
 
 
@@ -18,6 +15,19 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  
+  # Keep the last 10 generation
+  boot.loader.systemd-boot.configurationLimit = 10;
+
+  # Weekly garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
+  # Auto optimize store
+  nix.settings.auto-optimise-store = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -39,8 +49,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -80,8 +90,6 @@
     ];
   };
 
-  
-
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -116,32 +124,17 @@
 
 ];
 
-  # programs.bash = {
-  #   interactiveShellInit = ''
-  #     if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
-  #     then
-  #       shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-  #       exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-  #     fi
-  #   '';
-  # };
-  # 
+  programs.bash = {
+    interactiveShellInit = ''
+      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+      fi
+    '';
+  };
 
-  # programs.fish = {
-  # 	enable = true;
-  # 	interactiveShellInit = ''
-	# 	set fish_greeting
-  # 	'';
-  # };
-
-  programs.zsh.enable = true;
-
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [zsh];
-  programs.starship.enable = true;
-
-  
-  
+    
 	
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

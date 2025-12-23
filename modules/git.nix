@@ -1,4 +1,5 @@
-{ config, pkgs, ...}:
+{config, ...}:
+
 {
   programs.git = {
       enable = true;
@@ -11,20 +12,33 @@
         "*.swp"
       ];
 
+      signing = {
+        signByDefault = true;
+        key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
+      };
+      extraConfig = {
+        gpg.format = "ssh";
+      };
+
+
       settings = {
+        
         user = {
           name = "akmal";
           email = "isakulovdev@gmail.com";
         };
+        
         init.defaultBranch = "main";
+        
         core = {
-          editor = "nvim";
+          editor = "micro";
           autocrlf = "input";
         };
+
         commit.gpgsign = true;
         pull.rebase = true;
         rebase.autoStash = true;
         push.autoSetupRemote = true;
-      };
-    };
+      };   
+     };
 }
