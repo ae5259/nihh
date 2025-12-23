@@ -111,6 +111,8 @@
 	cargo
 	rustup
 
+  alejandra
+
 	zsh
 	fish
 	starship	

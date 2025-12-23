@@ -1,44 +1,40 @@
-{config, ...}:
-
-{
+{config, ...}: {
   programs.git = {
-      enable = true;
-      lfs.enable = true;
+    enable = true;
+    lfs.enable = true;
 
-      ignores = [
-        ".idea"
-        "node_modules"
-        ".DS_Store"
-        "*.swp"
-      ];
+    ignores = [
+      ".idea"
+      "node_modules"
+      ".DS_Store"
+      "*.swp"
+    ];
 
-      signing = {
-        signByDefault = true;
-        key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
+    signing = {
+      signByDefault = true;
+      key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
+    };
+    extraConfig = {
+      gpg.format = "ssh";
+    };
+
+    settings = {
+      user = {
+        name = "akmal";
+        email = "isakulovdev@gmail.com";
       };
-      extraConfig = {
-        gpg.format = "ssh";
+
+      init.defaultBranch = "main";
+
+      core = {
+        editor = "micro";
+        autocrlf = "input";
       };
 
-
-      settings = {
-        
-        user = {
-          name = "akmal";
-          email = "isakulovdev@gmail.com";
-        };
-        
-        init.defaultBranch = "main";
-        
-        core = {
-          editor = "micro";
-          autocrlf = "input";
-        };
-
-        commit.gpgsign = true;
-        pull.rebase = true;
-        rebase.autoStash = true;
-        push.autoSetupRemote = true;
-      };   
-     };
+      commit.gpgsign = true;
+      pull.rebase = true;
+      rebase.autoStash = true;
+      push.autoSetupRemote = true;
+    };
+  };
 }

@@ -12,17 +12,18 @@
     };
   };
 
-
-
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
     nixosConfigurations.t34 = nixpkgs.lib.nixosSystem {
-
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./nixos/configuration.nix
-        
 
         home-manager.nixosModules.home-manager
         {
