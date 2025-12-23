@@ -17,7 +17,32 @@
     nixpkgs,
     home-manager,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    appleFontsOverlay = _: prev: {
+      sf-pro = prev.stdenv.mkDerivation {
+        name = "SFMono";
+        version = "0.3.0";
+
+        src = ./fonts/SFMono/SFMonoRegular.otf;
+
+        # installPhase = ''
+        #   mkdir -p $out/share/fonts/truetype/
+        #   cp $src/*.ttf $out/share/fonts/truetype/
+        # '';
+        meta = {
+          description = "SFMono";
+        };
+
+        installPhase = ''
+          mkdir -p $out/share/fonts
+          mkdir -p $out/share/fonts/opentype
+          mkdir -p $out/share/fonts/truetype
+          find -name \*.otf -exec mv {} $out/share/fonts/opentype/ \;
+          find -name \*.ttf -exec mv {} $out/share/fonts/truetype/ \;
+        '';
+      };
+    };
+  in {
     nixosConfigurations.t34 = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [

@@ -1,21 +1,22 @@
-{ config, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      
-    ];
-
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../extra/fonts.nix
+  ];
 
   # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   # Keep the last 10 generation
   boot.loader.systemd-boot.configurationLimit = 10;
 
@@ -84,9 +85,9 @@
   users.users.t34 = {
     isNormalUser = true;
     description = "t34";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -97,34 +98,42 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-	git
-	vim 
-	wget
-	micro
-	curl
-	bat
+    git
+    vim
+    wget
+    micro
+    curl
+    bat
 
-	ghostty
-	telegram-desktop
+    ghostty
+    telegram-desktop
 
-	rustc
-	cargo
-	rustup
+    rustc
+    cargo
+    rustup
 
-  alejandra
+    alejandra
 
-	zsh
-	fish
-	starship	
-	
-	(flameshot.override { enableWlrSupport = true; })
+    zsh
+    fish
+    starship
 
-	element-desktop
+    (flameshot.override {enableWlrSupport = true;})
 
-	vscode
-	vscode.fhs
+    element-desktop
 
-];
+    vscode
+    vscode.fhs
+
+    # fish plugins
+    fishPlugins.done
+    fishPlugins.fzf-fish
+    fishPlugins.forgit
+    fishPlugins.hydro
+    fzf
+    fishPlugins.grc
+    grc
+  ];
 
   programs.bash = {
     interactiveShellInit = ''
@@ -136,8 +145,6 @@
     '';
   };
 
-    
-	
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -164,5 +171,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
