@@ -29,8 +29,8 @@
       "editor.padding.bottom" = 16;
       "editor.overviewRulerBorder" = false;
       "editor.hideCursorInOverviewRuler" = true;
-      # "editor.fontFamily" = "SF Mono";
-      "editor.fontFamily" = "Iosevka";
+      "editor.fontFamily" = "SF Mono";
+      # "editor.fontFamily" = "Iosevka";
       "security.workspace.trust.untrustedFiles" = "open";
       "editor.fontLigatures" = true;
       "editor.smoothScrolling" = true;
