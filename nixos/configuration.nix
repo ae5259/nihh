@@ -80,33 +80,7 @@
     ];
   };
 
-  # programs.git = {
-  #     enable = true;
-  #     lfs.enable = true;
-
-  #     ignores = [
-  #       ".idea"
-  #       "node_modules"
-  #       ".DS_Store"
-  #       "*.swp"
-  #     ];
-
-  #     settings = {
-  #       user = {
-  #         name = "akmal";
-  #         email = "isakulovdev@gmail.com";
-  #       };
-  #       init.defaultBranch = "main";
-  #       core = {
-  #         editor = "nvim";
-  #         autocrlf = "input";
-  #       };
-  #       commit.gpgsign = true;
-  #       pull.rebase = true;
-  #       rebase.autoStash = true;
-  #       push.autoSetupRemote = true;
-  #     };
-  #   };
+  
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -140,7 +114,6 @@
 	vscode
 	vscode.fhs
 
-  inputs.helix.packages."${pkgs.system}".helix
 ];
 
   # programs.bash = {
@@ -157,7 +130,7 @@
   # programs.fish = {
   # 	enable = true;
   # 	interactiveShellInit = ''
-		# set fish_greeting
+	# 	set fish_greeting
   # 	'';
   # };
 
