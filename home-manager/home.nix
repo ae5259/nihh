@@ -8,6 +8,7 @@
     ../modules/git.nix
     ../modules/fish.nix
     ../modules/vscode.nix
+    ../modules/firefox.nix
   ];
 
   home.username = "t34";

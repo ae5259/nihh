@@ -10,39 +10,25 @@
 
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nur,
     ...
-  } @ inputs: let
-    appleFontsOverlay = _: prev: {
-      sf-pro = prev.stdenv.mkDerivation {
-        name = "SFMono";
-        version = "0.3.0";
-
-        src = ./fonts/SFMono/SFMonoRegular.otf;
-
-        # installPhase = ''
-        #   mkdir -p $out/share/fonts/truetype/
-        #   cp $src/*.ttf $out/share/fonts/truetype/
-        # '';
-        meta = {
-          description = "SFMono";
-        };
-
-        installPhase = ''
-          mkdir -p $out/share/fonts
-          mkdir -p $out/share/fonts/opentype
-          mkdir -p $out/share/fonts/truetype
-          find -name \*.otf -exec mv {} $out/share/fonts/opentype/ \;
-          find -name \*.ttf -exec mv {} $out/share/fonts/truetype/ \;
-        '';
-      };
-    };
-  in {
+  } @ inputs: {
     nixosConfigurations.t34 = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
@@ -50,12 +36,16 @@
         # so the old configuration file still takes effect
         ./nixos/configuration.nix
 
+        nur.modules.nixos.default
+        nur.legacyPackages."x86_64-linux".repos.iopq.modules.xraya
+
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
 
+          home-manager.extraSpecialArgs = {inherit inputs;};
           home-manager.users.t34 = import ./home-manager/home.nix;
         }
       ];

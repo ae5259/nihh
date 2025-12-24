@@ -92,7 +92,14 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    policies = {
+      ExtensionSettings = {
+        default_area = "navbar";
+      };
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
