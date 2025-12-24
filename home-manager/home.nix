@@ -101,6 +101,8 @@
     usbutils # lsusb
 
     zoxide # for faster navigation
+
+    ayugram-desktop
   ];
 
   programs.zoxide.enable = true;
