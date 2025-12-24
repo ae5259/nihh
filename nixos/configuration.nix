@@ -133,6 +133,8 @@
     fzf
     fishPlugins.grc
     grc
+
+    deno
   ];
 
   programs.bash = {
