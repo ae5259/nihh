@@ -13,9 +13,7 @@
     signing = {
       signByDefault = true;
       key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
-    };
-    extraConfig = {
-      gpg.format = "ssh";
+      format = "ssh";
     };
 
     settings = {
