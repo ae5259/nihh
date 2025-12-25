@@ -111,6 +111,9 @@
     micro
     curl
     bat
+    zellij
+    neovim
+    helix
 
     ghostty
     telegram-desktop

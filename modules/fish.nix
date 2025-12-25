@@ -8,6 +8,13 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
     '';
+
+    shellAliases = {
+      zj = "zellij";
+      ls = "exa";
+      nv = "nvim";
+    };
+
     plugins = [
       # Enable a plugin (here grc for colorized command output) from nixpkgs
       {
