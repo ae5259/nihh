@@ -103,7 +103,25 @@
     zoxide # for faster navigation
 
     ayugram-desktop
+    flameshot
+    satty
+
+    # nixvim
   ];
+
+  # programs.nixvim.enable = true;
+
+  programs.satty = {
+    enable = true;
+  };
+
+  services.flameshot = {
+    enable = true;
+    settings.General = {
+      showStartupLaunchMessage = false;
+      saveLastRegion = true;
+    };
+  };
 
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;

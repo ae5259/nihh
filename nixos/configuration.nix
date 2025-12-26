@@ -55,8 +55,9 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
+    layout = "us,ru";
     variant = "";
+    options = "grp:lswitch,grp:lshift_toggle";
   };
 
   # Enable CUPS to print documents.
@@ -101,6 +102,41 @@
     };
   };
 
+  hardware.nvidia.prime = {
+    # Make sure to use the correct Bus ID values for your system!
+    intelBusId = "PCI:1:0:0";
+    nvidiaBusId = "PCI:0:2:0";
+    # amdgpuBusId = "PCI:54:0:0"; For AMD GPU
+  };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    nvidiaPersistenced = false;
+    dynamicBoost.enable = false;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
+  };
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      mesa
+      libvdpau
+      libva-vdpau-driver
+      libva
+      vulkan-loader
+      vulkan-validation-layers
+    ];
+  };
+
+  services.xserver.videoDrivers = [
+    "modesetting" # example for Intel iGPU; use "amdgpu" here instead if your iGPU is AMD
+    "nvidia"
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -128,12 +164,12 @@
     fish
     starship
 
-    (flameshot.override {enableWlrSupport = true;})
-
     element-desktop
 
     vscode
     vscode.fhs
+
+    # (flameshot.override {enableWlrSupport = true;})
 
     # fish plugins
     fishPlugins.done
@@ -144,7 +180,10 @@
     fishPlugins.grc
     grc
 
+    resources
     deno
+
+    gnome-screenshot
   ];
 
   programs.bash = {
