@@ -17,6 +17,7 @@
         charliermarsh.ruff
         jnoortheen.nix-ide
 
+        mkhl.direnv
         kamadorueda.alejandra
       ];
 

@@ -106,6 +106,9 @@
     flameshot
     satty
 
+    wpsoffice
+    direnv
+
     # nixvim
   ];
 
@@ -118,7 +121,7 @@
   services.flameshot = {
     enable = true;
     settings.General = {
-      showStartupLaunchMessage = false;
+      showStartupLaunchMessage = true;
       saveLastRegion = true;
     };
   };
