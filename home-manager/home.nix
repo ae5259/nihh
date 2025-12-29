@@ -109,6 +109,9 @@
     wpsoffice
     direnv
 
+    spotify
+
+    yazi
     # nixvim
   ];
 

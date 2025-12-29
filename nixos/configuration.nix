@@ -3,7 +3,9 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -59,6 +61,8 @@
     variant = "";
     options = "grp:lswitch,grp:lshift_toggle";
   };
+
+  services.flatpak.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -182,9 +186,21 @@
 
     resources
     deno
+    spicetify-cli
 
     gnome-screenshot
   ];
+
+  programs.spicetify = {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      adblockify
+      hidePodcasts
+      shuffle # shuffle+ (special characters are sanitized out of extension names)
+    ];
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
+  };
 
   programs.steam = {
     enable = true;

@@ -20,12 +20,18 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    spicetify-nix,
     nur,
     ...
   } @ inputs: {
@@ -38,6 +44,9 @@
 
         nur.modules.nixos.default
         nur.legacyPackages."x86_64-linux".repos.iopq.modules.xraya
+
+        # spicetify-nix.homeManagerModules.default
+        spicetify-nix.nixosModules.default
 
         home-manager.nixosModules.home-manager
         {
