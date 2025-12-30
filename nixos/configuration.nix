@@ -152,7 +152,6 @@ in {
     curl
     bat
     zellij
-    neovim
     helix
 
     ghostty

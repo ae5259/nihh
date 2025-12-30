@@ -2,6 +2,7 @@
   config,
   pkgs,
   home-manager,
+  lib,
   ...
 }: {
   imports = [
@@ -52,6 +53,7 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
+    fd
 
     # networking tools
     mtr # A network diagnostic tool
@@ -114,6 +116,11 @@
     yazi
     # nixvim
   ];
+
+  programs.neovim = {
+    enable = true;
+    extraConfig = lib.fileContents ../neovim/init.lua;
+  };
 
   # programs.nixvim.enable = true;
 
