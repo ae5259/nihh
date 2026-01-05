@@ -183,6 +183,7 @@
 
     resources
     deno
+    zig
 
     gnome-screenshot
   ];
