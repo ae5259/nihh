@@ -3,9 +3,7 @@
   pkgs,
   inputs,
   ...
-}: let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
-in {
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -185,21 +183,9 @@ in {
 
     resources
     deno
-    spicetify-cli
 
     gnome-screenshot
   ];
-
-  programs.spicetify = {
-    enable = true;
-    enabledExtensions = with spicePkgs.extensions; [
-      adblockify
-      hidePodcasts
-      shuffle # shuffle+ (special characters are sanitized out of extension names)
-    ];
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
-  };
 
   programs.steam = {
     enable = true;
