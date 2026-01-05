@@ -29,6 +29,13 @@
     nur,
     ...
   } @ inputs: {
+    packages.x86_64-linux.watershot = let
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+      };
+    in
+      pkgs.callPackage ./extra/watershot.nix pkgs;
+
     nixosConfigurations.t34 = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [

@@ -1,15 +1,17 @@
 {
+  inputs,
   config,
   pkgs,
   home-manager,
   lib,
   ...
-}: {
+} @ args: {
   imports = [
     ../modules/git.nix
     ../modules/fish.nix
     ../modules/vscode.nix
     ../modules/firefox.nix
+    ../modules/zed.nix
   ];
 
   home.username = "t34";
@@ -114,7 +116,10 @@
     spotify
 
     yazi
+    zed
     # nixvim
+
+    # (inputs.watershot.packages.${pkgs.stdenv.system}.default)
   ];
 
   programs.neovim = {
