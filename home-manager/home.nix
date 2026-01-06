@@ -12,6 +12,9 @@
     ../modules/vscode.nix
     ../modules/firefox.nix
     ../modules/zed.nix
+    ../modules/litexl.nix
+
+    inputs.nix-xl.homeModules.nix-xl
   ];
 
   home.username = "t34";
@@ -114,7 +117,7 @@
     direnv
 
     spotify
-
+    lite-xl
     yazi
     zed
     # nixvim
@@ -141,6 +144,7 @@
     };
   };
 
+  
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
 
