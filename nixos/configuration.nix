@@ -157,7 +157,8 @@
 
     rustc
     cargo
-    rustup
+    gcc
+    pkg-config
 
     alejandra
 

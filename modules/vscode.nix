@@ -16,6 +16,7 @@
         wakatime.vscode-wakatime
         charliermarsh.ruff
         jnoortheen.nix-ide
+        tamasfe.even-better-toml
 
         mkhl.direnv
         kamadorueda.alejandra

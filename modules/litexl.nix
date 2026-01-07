@@ -13,7 +13,7 @@
         "base16"
         "bracketmatch"
         "eofnewline"
-        # "formatter"
+        "formatter"
         "gitstatus"
         "linenumbers"
         "lintplus"
@@ -24,7 +24,7 @@
         "typingspeed"
 
         # "codeplus"
-        # "lite-xl-vibe" # Vim bindings
+        "lite-xl-vibe" # Vim bindings
       ];
 
       languages.enableList = [
@@ -44,3 +44,4 @@
     };
   };
 }
+

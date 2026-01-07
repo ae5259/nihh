@@ -110,7 +110,7 @@
     zoxide # for faster navigation
 
     ayugram-desktop
-    flameshot
+    # flameshot
     satty
 
     wpsoffice
@@ -136,15 +136,14 @@
     enable = true;
   };
 
-  services.flameshot = {
-    enable = true;
-    settings.General = {
-      showStartupLaunchMessage = true;
-      saveLastRegion = true;
-    };
-  };
+  # services.flameshot = {
+  #   enable = true;
+  #   settings.General = {
+  #     showStartupLaunchMessage = true;
+  #     saveLastRegion = true;
+  #   };
+  # };
 
-  
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
 

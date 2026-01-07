@@ -8,11 +8,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1767672212,
-        "narHash": "sha256-CGQgo92QKzCnRUF2wjEPsaIoKajVU5EyK1aDaMwo1xg=",
+        "lastModified": 1767758611,
+        "narHash": "sha256-ibG5QHWvuvclo5yh18+0fw3Ha/pbxhZ19quziyfvQ+w=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "461ec70d76363e9f76588afe59e02fbbc69da80e",
+        "rev": "fbd89131423a48ba82da06c6beef13a5ddde2818",
         "type": "gitlab"
       },
       "original": {
@@ -91,15 +91,15 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1767498152,
-        "narHash": "sha256-ADmlhMXjqrJOqM4hlYvBzRR8IrBGpBCicgHlGNNWwjo=",
-        "owner": "passivelemon",
+        "lastModified": 1767767111,
+        "narHash": "sha256-OQ1Bd8rdUP9YX9HNTl1Q1+67VDRNBNqiZyPLpjzss20=",
+        "owner": "ae5259",
         "repo": "nix-xl",
-        "rev": "87a29f287d9832b4e3774cb65152f4c04f553d30",
+        "rev": "bb91844ad9d525a113564ab3a56d506a3db38c73",
         "type": "github"
       },
       "original": {
-        "owner": "passivelemon",
+        "owner": "ae5259",
         "repo": "nix-xl",
         "type": "github"
       }
@@ -122,11 +122,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1767480499,
-        "narHash": "sha256-8IQQUorUGiSmFaPnLSo2+T+rjHtiNWc+OAzeHck7N48=",
+        "lastModified": 1767634882,
+        "narHash": "sha256-2GffSfQxe3sedHzK+sTKlYo/NTIAGzbFCIsNMUPAAnk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "30a3c519afcf3f99e2c6df3b359aec5692054d92",
+        "rev": "3c9db02515ef1d9b6b709fc60ba9a540957f661c",
         "type": "github"
       },
       "original": {
@@ -144,11 +144,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767681778,
-        "narHash": "sha256-DxJyanyDPOJ5PuJKUPA1vXqGj5XVqaM1tFbZqVDiwxg=",
+        "lastModified": 1767764511,
+        "narHash": "sha256-IOz/GcYzpR/R3ia1D9zsR9DOnyjZexWxP6AochAcnN8=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "d48d33629c67dd2cbee2fe83b1e01bdce3ebdd50",
+        "rev": "819cc5061ce0e367a30cac45043fc116f16978d6",
         "type": "github"
       },
       "original": {
