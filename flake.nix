@@ -5,7 +5,7 @@
     # NixOS official package source, using the nixos-25.11 branch here
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    nix-xl.url = "github:ae5259/nix-xl";
+    nix-xl.url = "github:PassiveLemon/nix-xl";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";

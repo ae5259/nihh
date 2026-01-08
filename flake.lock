@@ -91,15 +91,15 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1767767111,
-        "narHash": "sha256-OQ1Bd8rdUP9YX9HNTl1Q1+67VDRNBNqiZyPLpjzss20=",
-        "owner": "ae5259",
+        "lastModified": 1767812258,
+        "narHash": "sha256-tPMLc3ZjT08SZbnmRGt+3YKAZJaT9MqqT/mYTr3YoUI=",
+        "owner": "PassiveLemon",
         "repo": "nix-xl",
-        "rev": "bb91844ad9d525a113564ab3a56d506a3db38c73",
+        "rev": "f5f25591bd2ed280b92b1e1c6662df79e00e7f79",
         "type": "github"
       },
       "original": {
-        "owner": "ae5259",
+        "owner": "PassiveLemon",
         "repo": "nix-xl",
         "type": "github"
       }
