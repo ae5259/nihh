@@ -1,11 +1,8 @@
 {
   inputs,
-  config,
   pkgs,
-  home-manager,
-  lib,
   ...
-} @ args: {
+}: {
   imports = [
     ../modules/git.nix
     ../modules/fish.nix
@@ -14,7 +11,7 @@
     ../modules/zed.nix
     ../modules/litexl.nix
     ../modules/nvf.nix
-    ./astronvim.nix
+    ../astronvim.nix
 
     inputs.nvf.homeManagerModules.default
     inputs.nix-xl.homeModules.nix-xl

@@ -1,11 +1,9 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../extra/fonts.nix
   ];
@@ -18,7 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Keep the last 10 generation
-  boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader.systemd-boot.configurationLimit = 5;
 
   # Weekly garbage collection
   nix.gc = {
@@ -31,7 +29,7 @@
   nix.settings.auto-optimise-store = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -89,7 +87,7 @@
     isNormalUser = true;
     description = "t34";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
+    packages = [
       #  thunderbird
     ];
   };
@@ -152,17 +150,13 @@
     bat
     zellij
     helix
-
     ghostty
-    telegram-desktop
 
     rustc
     cargo
     gcc
     pkg-config
-
     alejandra
-
     zsh
     fish
     starship
@@ -171,8 +165,6 @@
 
     vscode
     vscode.fhs
-
-    # (flameshot.override {enableWlrSupport = true;})
 
     # fish plugins
     fishPlugins.done
@@ -186,18 +178,14 @@
     resources
     deno
     zig
-
     gnome-screenshot
-    flameshot
-
     gnome-tweaks
     gnome-extension-manager
   ];
 
-
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    extraPortals = [pkgs.xdg-desktop-portal-gnome];
     config.common.default = "gnome";
   };
 
