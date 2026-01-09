@@ -188,7 +188,14 @@
     zig
 
     gnome-screenshot
+    flameshot
   ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    config.common.default = "gnome";
+  };
 
   programs.steam = {
     enable = true;
