@@ -189,7 +189,11 @@
 
     gnome-screenshot
     flameshot
+
+    gnome-tweaks
+    gnome-extension-manager
   ];
+
 
   xdg.portal = {
     enable = true;
