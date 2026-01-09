@@ -16,6 +16,11 @@ Add the Flathub repository:
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
 
+Install flameshot:
+```bash
+flatpak install flathub org.flameshot.Flameshot
+```
+
 ```bash
 flatpak permission-set screenshot screenshot org.flameshot.Flameshot yes
 flatpak run --command=flameshot org.flameshot.Flameshot gui
