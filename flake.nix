@@ -13,8 +13,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
+
     nur = {
       url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nvf = {
+      url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -28,6 +35,7 @@
     self,
     nixpkgs,
     home-manager,
+    nixos-hardware,
     nur,
     ...
   } @ inputs: {
@@ -44,6 +52,8 @@
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./nixos/configuration.nix
+
+        nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen6
 
         nur.modules.nixos.default
         nur.legacyPackages."x86_64-linux".repos.iopq.modules.xraya

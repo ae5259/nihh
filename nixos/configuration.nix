@@ -141,6 +141,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowBroken = true;
 
   environment.systemPackages = with pkgs; [
     git

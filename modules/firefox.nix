@@ -19,6 +19,7 @@
           ublock-origin
           darkreader
           sidebery
+          vimium
           youtube-recommended-videos
         ];
 

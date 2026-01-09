@@ -13,7 +13,10 @@
     ../modules/firefox.nix
     ../modules/zed.nix
     ../modules/litexl.nix
+    ../modules/nvf.nix
+    ./astronvim.nix
 
+    inputs.nvf.homeManagerModules.default
     inputs.nix-xl.homeModules.nix-xl
   ];
 
@@ -124,11 +127,6 @@
 
     # (inputs.watershot.packages.${pkgs.stdenv.system}.default)
   ];
-
-  programs.neovim = {
-    enable = true;
-    extraConfig = lib.fileContents ../neovim/init.lua;
-  };
 
   # programs.nixvim.enable = true;
 
