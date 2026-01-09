@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{...}: {
   programs.lite-xl = {
     enable = true;
 
@@ -44,4 +39,3 @@
     };
   };
 }
-
