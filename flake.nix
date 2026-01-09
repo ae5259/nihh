@@ -2,7 +2,6 @@
   description = "A simple NixOS flake";
 
   inputs = {
-    # NixOS official package source, using the nixos-25.11 branch here
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     nix-xl.url = "github:PassiveLemon/nix-xl";
@@ -20,11 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf = {
-      url = "github:NotAShelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +26,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     home-manager,
     nixos-hardware,
@@ -49,8 +42,6 @@
     nixosConfigurations.t34 = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
         ./nixos/configuration.nix
 
         nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen6
