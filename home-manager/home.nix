@@ -3,15 +3,13 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ../modules/git.nix
-    ../modules/fish.nix
-    ../modules/vscode.nix
-    ../modules/firefox.nix
-    ../modules/zed.nix
-    ../modules/litexl.nix
-    ../modules/nvf.nix
+  imports = [ 
     ../astronvim.nix
+    ../modules/firefox.nix
+    ../modules/fish.nix
+    ../modules/git.nix
+    ../modules/litexl.nix
+    ../modules/vscode.nix
 
     inputs.nvf.homeManagerModules.default
     inputs.nix-xl.homeModules.nix-xl
@@ -81,6 +79,7 @@
     zstd
     gnupg
 
+    onefetch
     # nix related
     #
     # it provides the command `nom` works just like `nix`
