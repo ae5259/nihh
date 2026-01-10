@@ -11,7 +11,6 @@
     ../modules/litexl.nix
     ../modules/vscode.nix
 
-    inputs.nvf.homeManagerModules.default
     inputs.nix-xl.homeModules.nix-xl
   ];
 
