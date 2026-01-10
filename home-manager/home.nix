@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [ 
-    ../astronvim.nix
+    ../modules/astronvim.nix
     ../modules/firefox.nix
     ../modules/fish.nix
     ../modules/git.nix
