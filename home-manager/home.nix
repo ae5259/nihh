@@ -18,7 +18,7 @@
   home.homeDirectory = "/home/t34";
 
   # link the configuration file in current directory to the specified location in home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
+  # home.file.wallpaper = ../extra/a_maidens_wish.png;
 
   # link all files in `./scripts` to `~/.config/i3/scripts`
   # home.file.".config/i3/scripts" = {
@@ -78,6 +78,8 @@
     zstd
     gnupg
 
+    figma-linux
+
     onefetch
     # nix related
     #
@@ -108,19 +110,14 @@
     zoxide # for faster navigation
 
     ayugram-desktop
-    # flameshot
-    satty
 
     wpsoffice
     direnv
 
-    spotify
     lite-xl
     yazi
-    zed
-    # nixvim
 
-    # (inputs.watershot.packages.${pkgs.stdenv.system}.default)
+    obs-studio
   ];
 
   # programs.nixvim.enable = true;

@@ -160,11 +160,7 @@
     zsh
     fish
     starship
-
     element-desktop
-
-    vscode
-    vscode.fhs
 
     # fish plugins
     fishPlugins.done
