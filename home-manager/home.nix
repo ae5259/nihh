@@ -118,6 +118,8 @@
     yazi
 
     obs-studio
+    feh
+    swaybg
   ];
 
   # programs.nixvim.enable = true;

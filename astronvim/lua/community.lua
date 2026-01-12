@@ -11,6 +11,7 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.zig" },
+  { import = "astrocommunity.media.vim-wakatime" },
 
   { import = "astrocommunity.utility.noice-nvim" },
   -- import/override with your plugins folder
