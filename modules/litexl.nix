@@ -18,7 +18,6 @@
         "tab_switcher"
         "typingspeed"
 
-        # "codeplus"
         "lite-xl-vibe" # Vim bindings
       ];
 

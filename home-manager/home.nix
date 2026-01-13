@@ -40,7 +40,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    neofetch
     nnn # terminal file manager
 
     # archives
@@ -81,6 +80,7 @@
     figma-linux
 
     onefetch
+    neofetch
     # nix related
     #
     # it provides the command `nom` works just like `nix`
@@ -88,7 +88,6 @@
     nix-output-monitor
 
     # productivity
-    hugo # static site generator
     glow # markdown previewer in terminal
 
     btop # replacement of htop/nmon
@@ -122,19 +121,9 @@
     swaybg
   ];
 
-  # programs.nixvim.enable = true;
-
   programs.satty = {
     enable = true;
   };
-
-  # services.flameshot = {
-  #   enable = true;
-  #   settings.General = {
-  #     showStartupLaunchMessage = true;
-  #     saveLastRegion = true;
-  #   };
-  # };
 
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
@@ -147,7 +136,7 @@
       add_newline = false;
       aws.disabled = true;
       gcloud.disabled = true;
-      # line_break.disabled = true;
+      line_break.disabled = true;
     };
   };
 
