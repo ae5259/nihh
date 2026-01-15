@@ -171,6 +171,7 @@
     fishPlugins.grc
     grc
 
+    tlp
     resources
     deno
     zig
@@ -178,6 +179,10 @@
     gnome-tweaks
     gnome-extension-manager
   ];
+
+  services.power-profiles-daemon.enable = false;
+  
+  services.tlp.enable = true;
 
   xdg.portal = {
     enable = true;

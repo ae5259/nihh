@@ -121,10 +121,6 @@
     swaybg
   ];
 
-  programs.satty = {
-    enable = true;
-  };
-
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
 
