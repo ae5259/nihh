@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [ 
+  imports = [
     ../modules/astronvim.nix
     ../modules/firefox.nix
     ../modules/fish.nix
@@ -115,6 +115,8 @@
 
     lite-xl
     yazi
+    ffmpeg
+    yt-dlp
 
     obs-studio
     feh

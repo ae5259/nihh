@@ -65,6 +65,14 @@
 
   services.fprintd.enable = true;
   services.fprintd.tod.enable = true;
+  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
+
+  services.thermald.enable = true;
+
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -83,7 +91,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.t34 = {
@@ -182,10 +190,6 @@
     gnome-tweaks
     gnome-extension-manager
   ];
-
-  services.power-profiles-daemon.enable = false;
-  
-  services.tlp.enable = true;
 
   xdg.portal = {
     enable = true;
