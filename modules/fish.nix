@@ -9,6 +9,7 @@
       zj = "zellij";
       ls = "exa";
       nv = "nvim";
+      mf = "microfetch";
     };
 
     plugins = [

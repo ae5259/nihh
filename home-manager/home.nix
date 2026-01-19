@@ -80,6 +80,8 @@
     figma-linux
 
     onefetch
+    microfetch
+    fastfetch
     neofetch
     # nix related
     #
