@@ -123,6 +123,9 @@
     obs-studio
     feh
     swaybg
+
+
+    st
   ];
 
   programs.zoxide.enable = true;
