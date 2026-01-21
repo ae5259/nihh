@@ -111,6 +111,9 @@
     zoxide # for faster navigation
 
     ayugram-desktop
+    spotify
+    yandex-music
+    discord
 
     wpsoffice
     direnv
@@ -124,7 +127,7 @@
     feh
     swaybg
 
-
+    bc
     st
   ];
 
