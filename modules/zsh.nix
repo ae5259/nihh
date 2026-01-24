@@ -11,6 +11,13 @@
       }
     ];
 
+    shellAliases = {
+      zj = "zellij";
+      ls = "exa";
+      nv = "nvim";
+      mf = "microfetch";
+    };
+
     history = {
       extended = true;
     };
