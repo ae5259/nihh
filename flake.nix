@@ -6,6 +6,8 @@
 
     nix-xl.url = "github:PassiveLemon/nix-xl";
 
+    awzod.url = "github:ae5259/awzod";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
 

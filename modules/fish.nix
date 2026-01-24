@@ -2,8 +2,13 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      set fish_greeting # Disable greeting
+      set -U fish_greeting
     '';
+
+    # shellInitLast = ''
+    #   awzod random
+    #   echo \n
+    # '';
 
     shellAliases = {
       zj = "zellij";
@@ -13,12 +18,10 @@
     };
 
     plugins = [
-      # Enable a plugin (here grc for colorized command output) from nixpkgs
       {
         name = "grc";
         src = pkgs.fishPlugins.grc.src;
       }
-      # Manually packaging and enable a plugin
       {
         name = "z";
         src = pkgs.fetchFromGitHub {
