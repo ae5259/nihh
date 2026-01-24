@@ -191,6 +191,15 @@
     gnome-extension-manager
   ];
 
+  # services.tlp = {
+  #   enable = true;
+  #
+  #   settings = {
+  #     START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
+  #     STOP_CHARGE_THRESH_BAT0 = 79; # 80 and above it stops charging
+  #   };
+  # };
+
   xdg.portal = {
     enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gnome];
@@ -203,13 +212,10 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
+  programs.zsh.enable = true;
   programs.bash = {
     interactiveShellInit = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
+      exec zsh
     '';
   };
 

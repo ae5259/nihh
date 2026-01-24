@@ -6,11 +6,13 @@
   imports = [
     ../modules/astronvim.nix
     ../modules/firefox.nix
-    ../modules/fish.nix
+    ../modules/zsh.nix
     ../modules/git.nix
     ../modules/litexl.nix
     ../modules/vscode.nix
 
+    # Disable fish for learning purposes
+    # ../modules/fish.nix
     inputs.nix-xl.homeModules.nix-xl
   ];
 
