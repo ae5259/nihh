@@ -25,18 +25,19 @@
       }
     ];
 
-    completionInit = "awzod random";
-
     shellAliases = {
       zj = "zellij";
       ls = "exa";
       nv = "nvim";
       mf = "microfetch";
+      cl = "clear";
+      reload = "sudo nixos-rebuild switch --flake ~/nihh/#t34";
     };
 
     history = {
       extended = true;
     };
+
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
