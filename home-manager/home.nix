@@ -11,6 +11,7 @@
     ../modules/git.nix
     ../modules/litexl.nix
     ../modules/vscode.nix
+    ../modules/starship.nix
 
     # Disable fish for learning purposes
     # ../modules/fish.nix
@@ -138,18 +139,6 @@
 
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
-
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      add_newline = true;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = false;
-    };
-  };
 
   programs.direnv = {
     enable = true;
