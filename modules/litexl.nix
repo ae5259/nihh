@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   programs.lite-xl = {
     enable = true;
 

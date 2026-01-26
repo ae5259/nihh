@@ -2,14 +2,18 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
     ../extra/fonts.nix
   ];
 
   # Flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -74,6 +78,8 @@
     powertop.enable = true;
   };
 
+  powerManagement.cpuFreqGovernor = "powersave";
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -97,7 +103,11 @@
   users.users.t34 = {
     isNormalUser = true;
     description = "t34";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    shell = pkgs.zsh;
     packages = [
       #  thunderbird
     ];
@@ -161,7 +171,6 @@
     bat
     zellij
     helix
-    ghostty
 
     rustc
     cargo
@@ -182,6 +191,7 @@
     fishPlugins.grc
     grc
 
+    powertop
     tlp
     resources
     deno
@@ -202,7 +212,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gnome];
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
     config.common.default = "gnome";
   };
 
@@ -213,11 +223,6 @@
   };
 
   programs.zsh.enable = true;
-  programs.bash = {
-    interactiveShellInit = ''
-      exec zsh
-    '';
-  };
 
   services.kmonad = {
     enable = true;

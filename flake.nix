@@ -10,7 +10,6 @@
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
-
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,40 +28,60 @@
     };
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    nixos-hardware,
-    nur,
-    ...
-  } @ inputs: {
-    packages.x86_64-linux.watershot = let
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nixos-hardware,
+      nur,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations.t34 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./nixos/configuration.nix
+
+          nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen6
+
+          nur.modules.nixos.default
+          nur.legacyPackages."x86_64-linux".repos.iopq.modules.xraya
+
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager = {
+              sharedModules = [
+                nur.modules.homeManager.default
+              ];
+              useGlobalPkgs = true;
+              # useUserPackages = true;
+              # backupFileExtension = "backup";
+
+              extraSpecialArgs = { inherit inputs; };
+              users.t34 = import ./home-manager/home.nix;
+            };
+          }
+        ];
       };
-    in
-      pkgs.callPackage ./extra/watershot.nix pkgs;
-
-    nixosConfigurations.t34 = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./nixos/configuration.nix
-
-        nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen6
-
-        nur.modules.nixos.default
-        nur.legacyPackages."x86_64-linux".repos.iopq.modules.xraya
-
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-
-          home-manager.extraSpecialArgs = {inherit inputs;};
-          home-manager.users.t34 = import ./home-manager/home.nix;
-        }
-      ];
-    };
-  };
+    }
+    // (
+      let
+        system = "x86_64-linux";
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        formatter.${system} = pkgs.nixfmt;
+        devShells.${system}.default = pkgs.mkShell {
+          packages = with pkgs; [
+            self.formatter.${system}
+            nixd
+            statix
+            deadnix
+            nixfmt-tree
+          ];
+        };
+      }
+    );
 }

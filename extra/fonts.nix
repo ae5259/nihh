@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   fonts = {
     fontDir.enable = true;
     enableDefaultPackages = true;
@@ -22,9 +23,9 @@
 
     fontconfig = {
       defaultFonts = {
-        serif = ["Times Newer Roman"];
-        sansSerif = ["Noto Sans"];
-        monospace = ["Iosevka"];
+        serif = [ "Times Newer Roman" ];
+        sansSerif = [ "Noto Sans" ];
+        monospace = [ "Iosevka" ];
       };
     };
   };

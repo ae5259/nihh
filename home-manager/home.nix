@@ -2,7 +2,8 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../modules/astronvim.nix
     ../modules/firefox.nix
@@ -41,7 +42,8 @@
   # };
 
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs;
+  home.packages =
+    with pkgs;
     [
       nnn # terminal file manager
 
@@ -119,7 +121,6 @@
       discord
 
       wpsoffice
-      direnv
 
       lite-xl
       yazi
@@ -133,7 +134,7 @@
       bc
       st
     ]
-    ++ [inputs.awzod.packages.${pkgs.system}.default];
+    ++ [ inputs.awzod.packages.${pkgs.system}.default ];
 
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
@@ -150,13 +151,18 @@
     };
   };
 
-  programs.bash = {
+  programs.direnv = {
     enable = true;
-    enableCompletion = true;
-    # TODO add your custom bashrc here
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    '';
+    nix-direnv.enable = true;
+  };
+
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    installVimSyntax = true;
+    settings = {
+      font-family = "Iosevka";
+    };
   };
 
   # This value determines the home Manager release that your
