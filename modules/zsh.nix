@@ -32,6 +32,7 @@
       mf = "microfetch";
       cl = "clear";
       reload = "sudo nixos-rebuild switch --flake ~/nihh/#t34";
+      ee = "exa --tree";
     };
 
     history = {
