@@ -26,6 +26,8 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    wall-rs.url = "github:ae5259/wall-rs";
   };
 
   outputs =

@@ -13,6 +13,11 @@
     ../modules/vscode.nix
     ../modules/starship.nix
 
+    ../modules/ghostty.nix
+    ../modules/kitty.nix
+    ../modules/alacritty.nix
+    ../modules/wezterm.nix
+
     # Disable fish for learning purposes
     # ../modules/fish.nix
     inputs.nix-xl.homeModules.nix-xl
@@ -132,10 +137,15 @@
       feh
       swaybg
 
+      fuzzylite
+
       bc
       st
     ]
-    ++ [ inputs.awzod.packages.${pkgs.system}.default ];
+    ++ [
+      inputs.awzod.packages.${pkgs.system}.default
+      inputs.wall-rs.packages.${pkgs.system}.default
+    ];
 
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
@@ -143,15 +153,6 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
-  };
-
-  programs.ghostty = {
-    enable = true;
-    enableZshIntegration = true;
-    installVimSyntax = true;
-    settings = {
-      font-family = "SF Mono";
-    };
   };
 
   # This value determines the home Manager release that your
