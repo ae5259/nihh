@@ -7,6 +7,8 @@
 
     enableCompletion = true;
 
+    envExtra = "bindkey '^?' backward-kill-word";
+
     plugins = [
       {
         name = "vi-mode";
