@@ -5,7 +5,8 @@
     enableZshIntegration = true;
     installVimSyntax = true;
     settings = {
-      font-family = "SF Mono";
+      font-family = "Iosevka";
+      # font-family = "SF Mono";
     };
   };
 }
