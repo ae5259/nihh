@@ -25,3 +25,13 @@ flatpak install flathub org.flameshot.Flameshot
 flatpak permission-set screenshot screenshot org.flameshot.Flameshot yes
 flatpak run --command=flameshot org.flameshot.Flameshot gui
 ```
+
+## Useful commands I will need later.
+
+```bash
+nix profile history --profile /nix/var/nix/profiles/system
+```
+
+```bash
+sudo nix-collect-garbage --delete-old
+```
