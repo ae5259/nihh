@@ -2,8 +2,7 @@
   inputs,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
     ../modules/astronvim.nix
     ../modules/firefox.nix
@@ -48,8 +47,7 @@
   # };
 
   # Packages that should be installed to the user profile.
-  home.packages =
-    with pkgs;
+  home.packages = with pkgs;
     [
       nnn # terminal file manager
 

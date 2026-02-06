@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -33,8 +32,14 @@
       nv = "nvim";
       mf = "microfetch";
       cl = "clear";
-      reload = "sudo nixos-rebuild switch --flake ~/nihh/#t34";
       ee = "exa --tree";
+
+      # NixOS related
+      past = "nix profile history --profile /nix/var/nix/profiles/system";
+      garbage = "sudo nix-collect-garbage --delete-old";
+
+      # Path must be provided. e.g. .#t34
+      reload = "sudo nixos-rebuild switch --flake";
     };
 
     history = {
@@ -43,7 +48,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = ["git"];
       theme = "robbyrussell";
     };
 

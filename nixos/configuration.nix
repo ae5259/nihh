@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
     ./hardware-configuration.nix
     ../extra/fonts.nix
@@ -212,7 +211,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    extraPortals = [pkgs.xdg-desktop-portal-gnome];
     config.common.default = "gnome";
   };
 

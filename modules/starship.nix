@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.starship = {
     enable = true;
 
@@ -11,5 +10,4 @@
       line_break.disabled = false;
     };
   };
-
 }

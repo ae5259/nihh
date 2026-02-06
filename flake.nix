@@ -30,18 +30,17 @@
     wall-rs.url = "github:ae5259/wall-rs";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      nixos-hardware,
-      nur,
-      ...
-    }@inputs:
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    nixos-hardware,
+    nur,
+    ...
+  } @ inputs:
     {
       nixosConfigurations.t34 = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
         modules = [
           ./nixos/configuration.nix
 
@@ -61,7 +60,7 @@
               # useUserPackages = true;
               # backupFileExtension = "backup";
 
-              extraSpecialArgs = { inherit inputs; };
+              extraSpecialArgs = {inherit inputs;};
               users.t34 = import ./home-manager/home.nix;
             };
           }
@@ -71,9 +70,8 @@
     // (
       let
         system = "x86_64-linux";
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
+        pkgs = import nixpkgs {inherit system;};
+      in {
         formatter.${system} = pkgs.nixfmt;
         devShells.${system}.default = pkgs.mkShell {
           packages = with pkgs; [
