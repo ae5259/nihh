@@ -8,6 +8,7 @@
     # ./keyboard.nix
     ./network.nix
     ./spicetify.nix
+    ../../niri
   ];
 
   programs.nix-index-database.comma = {
@@ -92,15 +93,15 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = pkgs.lib.mkForce false;
+  services.desktopManager.gnome.enable = pkgs.lib.mkForce false;
 
   # services.xserver.displayManager.lightdm.enable = true;
   # services.xserver.desktopManager.cinnamon.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us,ru";
+    layout = "us";
     variant = "";
     options = "grp:lswitch,grp:lshift_toggle";
   };

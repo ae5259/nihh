@@ -6,6 +6,7 @@
 
     settings = {
       cursor_trail = 3;
+      background_blur = 1;
     };
 
     font = {

@@ -57,6 +57,10 @@
     vanilla-dmz
     bibata-cursors
     thunderbird
+
+    # Niri
+    swaylock
+    fuzzel
   ];
   # ++ [
   #   inputs.uchar.packages.${system}.linux

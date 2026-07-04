@@ -1,0 +1,25 @@
+input {
+  keyboard {
+    xkb {
+      layout "us"
+    }
+  }
+}
+
+binds {
+  Mod+E { spawn "AyuGram"; }
+  Mod+T { spawn "wezterm"; }
+  Mod+D { spawn "firefox"; }
+
+  Mod+F { spawn "fuzzel"; }
+  Mod+Shift+L { spawn "swaylock"; }
+  
+  // Switch Workspace
+  Alt+H { focus-column-left; }
+  Alt+J { focus-workspace-down; }
+  Alt+K { focus-workspace-up; }
+  Alt+L { focus-column-right; }
+
+
+  Mod+Q { close-window; }
+}

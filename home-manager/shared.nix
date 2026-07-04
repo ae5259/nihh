@@ -9,6 +9,7 @@ in {
       inputs.zen-browser.homeModules.beta
     ];
 
+  xdg.configFile."niri/config.kdl".source = ../niri/config.kdl;
   # modules = [
   # ];
 
