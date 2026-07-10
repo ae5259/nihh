@@ -32,6 +32,16 @@
     flake = "/home/sae/nihh/flake.nix";
     flakearg = "sae";
   };
+   
+  # Enable the GNOME Desktop Environment.
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services = {
+    login.enableGnomeKeyring = true;
+    gdm.enableGnomeKeyring = true;
+  };
 
   hardware.bluetooth = {
     enable = true;

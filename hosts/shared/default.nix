@@ -92,10 +92,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = pkgs.lib.mkForce false;
-  services.desktopManager.gnome.enable = pkgs.lib.mkForce false;
-
   # services.xserver.displayManager.lightdm.enable = true;
   # services.xserver.desktopManager.cinnamon.enable = true;
 

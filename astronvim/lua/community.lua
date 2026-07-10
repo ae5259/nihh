@@ -14,8 +14,14 @@ return {
   { import = "astrocommunity.pack.nim" },
   { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.pack.cpp" },
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.typescript-deno" },
   { import = "astrocommunity.media.vim-wakatime" },
+
+  { import = "astrocommunity.editing-support.nvim-ts-autotag" },
+  { import = "astrocommunity.lsp.ts-error-translator-nvim" },
+  { import = "astrocommunity.comment.nvim-ts-context-commentstring" },
+  { import = "astrocommunity.pack.tailwindcss" },
 
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
   { import = "astrocommunity.utility.noice-nvim" },

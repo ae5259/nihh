@@ -8,8 +8,6 @@ in {
       inputs.nix-xl.homeModules.nix-xl
       inputs.zen-browser.homeModules.beta
     ];
-
-  xdg.configFile."niri/config.kdl".source = ../niri/config.kdl;
   # modules = [
   # ];
 

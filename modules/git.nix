@@ -1,4 +1,4 @@
-{config, ...}: {
+{config,pkgs, ...}: {
   programs.git = {
     enable = true;
     lfs.enable = true;
@@ -15,6 +15,10 @@
       signByDefault = true;
       key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
       format = "ssh";
+    };
+
+    extraConfig = {
+      credential.helper = "store";
     };
 
     settings = {

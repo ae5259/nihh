@@ -20,8 +20,7 @@ binds {
   Alt+K { focus-workspace-up; }
   Alt+L { focus-column-right; }
 
-  Alt+Shift+F { maximize-column; }
-  Alt+Shift+S { screenshot-window; }
+  Mod+Shift+F { toggle-windowed-fullscreen; }
 
   Mod+Q { close-window; }
 }
