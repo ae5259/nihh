@@ -18,9 +18,7 @@ return {
   { import = "astrocommunity.pack.typescript-deno" },
   { import = "astrocommunity.media.vim-wakatime" },
 
-  { import = "astrocommunity.editing-support.nvim-ts-autotag" },
   { import = "astrocommunity.lsp.ts-error-translator-nvim" },
-  { import = "astrocommunity.comment.nvim-ts-context-commentstring" },
   { import = "astrocommunity.pack.tailwindcss" },
 
   { import = "astrocommunity.colorscheme.gruvbox-baby" },

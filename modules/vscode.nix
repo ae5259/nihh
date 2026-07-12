@@ -13,6 +13,7 @@
         charliermarsh.ruff
         jnoortheen.nix-ide
         tamasfe.even-better-toml
+        vscodevim.vim
 
         mkhl.direnv
         kamadorueda.alejandra
@@ -79,6 +80,67 @@
         "go.toolsManagement.autoUpdate" = true;
         "git.blame.editorDecoration.enabled" = true;
         "zig.zls.enabled" = "on";
+
+
+        # Vim Mode
+        "vim.easymotion" = true;
+        "vim.incsearch" = true;
+        "vim.useSystemClipboard" = true;
+        "vim.useCtrlKeys" = true;
+        "vim.hlsearch" = true;
+        "vim.leader" = "<space>";
+
+        "vim.normalModeKeyBindings" = [
+          {
+            "before" = [
+              "leader"
+              "w"
+            ];
+            "commands" = [
+              "workbench.action.files.save"
+            ];
+          }
+
+          {
+            "before" = [
+              "leader"
+              "o"
+            ];
+            "commands" = [
+              "workbench.view.explorer"
+            ];
+          }
+
+          {
+            "before" = [
+              "leader"
+              "t"
+            ];
+            "commands" = [
+              "workbench.action.terminal.toggleTerminal"
+            ];
+          }
+
+          {
+            "before" = [
+              "leader"
+              "k"
+            ];
+            "commands" = [
+              "editor.action.showHover"
+            ];
+          }
+
+          {
+            "before" = [
+              "leader"
+              "/"
+            ];
+            "commands" = [
+              "editor.action.commentLine"
+            ];
+          }
+        ];
       };
     };
   };
