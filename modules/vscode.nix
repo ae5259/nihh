@@ -81,14 +81,88 @@
         "git.blame.editorDecoration.enabled" = true;
         "zig.zls.enabled" = "on";
 
-
         # Vim Mode
-        "vim.easymotion" = true;
+        "vim.easymotion" = false;
         "vim.incsearch" = true;
         "vim.useSystemClipboard" = true;
         "vim.useCtrlKeys" = true;
         "vim.hlsearch" = true;
         "vim.leader" = "<space>";
+
+        "vim.insertModeKeyBindings" = [
+          {
+            before = [
+              "j"
+              "k"
+            ];
+            after = [
+              "<Esc>"
+            ];
+          }
+        ];
+
+        "vim.visualModeKeyBindings" = [
+          [
+            {
+              "before" = [
+                "leader"
+                "w"
+              ];
+              "commands" = [
+                "workbench.action.files.save"
+              ];
+            }
+
+            {
+              "before" = [
+                "leader"
+                "o"
+              ];
+              "commands" = [
+                "workbench.view.explorer"
+              ];
+            }
+
+            {
+              "before" = [
+                "leader"
+                "t"
+              ];
+              "commands" = [
+                "workbench.action.terminal.toggleTerminal"
+              ];
+            }
+
+            {
+              "before" = [
+                "K"
+              ];
+              "commands" = [
+                "editor.action.showHover"
+              ];
+            }
+
+            {
+              "before" = [
+                "leader"
+                "/"
+              ];
+              "commands" = [
+                "editor.action.commentLine"
+              ];
+            }
+
+            {
+              "before" = [
+                "leader"
+                "c"
+              ];
+              "commands" = [
+                "workbench.action.closeActiveEditor"
+              ];
+            }
+          ]
+        ];
 
         "vim.normalModeKeyBindings" = [
           {
@@ -123,8 +197,7 @@
 
           {
             "before" = [
-              "leader"
-              "k"
+              "K"
             ];
             "commands" = [
               "editor.action.showHover"
@@ -138,6 +211,16 @@
             ];
             "commands" = [
               "editor.action.commentLine"
+            ];
+          }
+
+          {
+            "before" = [
+              "leader"
+              "c"
+            ];
+            "commands" = [
+              "workbench.action.closeActiveEditor"
             ];
           }
         ];

@@ -32,7 +32,12 @@
     flake = "/home/sae/nihh/flake.nix";
     flakearg = "sae";
   };
-   
+
+  virtualisation.docker = {
+    enable = true;
+    rootless.enable = true;
+  };
+
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -69,6 +74,7 @@
       "wheel"
       "input"
       "uinput"
+      "docker"
     ];
     shell = pkgs.fish;
     ignoreShellProgramCheck = true;
