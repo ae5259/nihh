@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
 
@@ -16,12 +17,24 @@
     inputs.nix-data.nixosModules.nix-data
   ];
 
+  boot.supportedFilesystems = [
+    "ntfs"
+    "exfat"
+    "vfat"
+  ];
 
-  boot.supportedFilesystems = ["ntfs" "exfat" "vfat"];
+  services.fprintd = {
+    enable = true;
+    package = pkgs.fprintd-tod;
+    tod.enable = true;
+    tod.driver = pkgs.libfprint-2-tod1-broadcom;
+  };
 
-  services.fprintd.enable = true;
-  services.fprintd.tod.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
+  services.pcscd.enable = true;
+  environment.systemPackages = with pkgs; [
+    ccid
+    opensc
+  ];
 
   services.thermald.enable = true;
 

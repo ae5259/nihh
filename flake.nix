@@ -78,7 +78,7 @@
     nixosConfigurations.t34 = import ./hosts/pad inputs;
     nixosConfigurations.dell = import ./hosts/dell inputs;
 
-    formatter.${system} = pkgs.alejandra;
+    formatter.${system} = pkgs.nixfmt;
     # formatter.${system} = pkgs.nixpkgs-fmt;
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
