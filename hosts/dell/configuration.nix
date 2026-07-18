@@ -2,8 +2,7 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     ./hardware-configuration.nix
 
@@ -22,6 +21,8 @@
     "exfat"
     "vfat"
   ];
+
+  services.openssh.enable = true;
 
   services.fprintd = {
     enable = true;
@@ -57,7 +58,7 @@
   };
 
   programs.niri = {
-    enable = false;
+    enable = true;
   };
 
   # This value determines the NixOS release from which the default

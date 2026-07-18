@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   services.greetd = {
     enable = true;
 
@@ -8,9 +8,5 @@
         user = "dell";
       };
     };
-  };
-
-  programs.niri = {
-    enable = false;
   };
 }
