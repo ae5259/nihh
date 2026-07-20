@@ -51,23 +51,25 @@
       qmk
       qmk-udev-rules # the only relevant
       qmk_hid
-      via
-      vial
+      # via
+      # vial
     ];
   };
 
   nix = {
     settings = {
-      extra-substituters = [
-        "https://cache.nixos.org/"
-        "https://cache.xinux.uz/?priority=100"
+      substituters = [
+        "https://cache.xinux.uz/"
         "https://cache.garnix.io"
         "https://ayugram-desktop.cachix.org"
+        "https://cache.nixos.org/"
       ];
+
       trusted-public-keys = [
         "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "ayugram-desktop.cachix.org:AZ5EqHrJsAKL5YkZYLPEsb1FdD9QlypUwQ0REcJftgA="
       ];
+
       extra-trusted-public-keys = ["cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="];
 
       experimental-features = "nix-command flakes pipe-operators";

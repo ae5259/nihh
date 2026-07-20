@@ -17,7 +17,6 @@
 
     # Shared configuration
     ../shared
-    ./ssh.nix
 
     inputs.nix-data.nixosModules.nix-data
   ];
@@ -32,6 +31,23 @@
     flake = "/home/sae/nihh/flake.nix";
     flakearg = "sae";
   };
+
+  # For Tailscale
+  services.openssh.enable = true;
+
+  users.users.builder = {
+    isNormalUser = true;
+
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINhQlu6jHF2BLrNvfKy+XXjneqnE3Rz9B2ls6fvw+pWw isakulovdev@gmail.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMW/+EvS0eyqdQNWlzO4TxWTy0sVQ2n6pS5YGhB9Vyyt tapnisu@tapnisu-desktop"
+    ];
+  };
+
+  nix.settings.trusted-users = [
+    "root"
+    "builder"
+  ];
 
   virtualisation.docker = {
     enable = true;

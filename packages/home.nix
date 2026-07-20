@@ -88,6 +88,7 @@ in {
       ngrok
 
       brightnessctl
+      tldr
     ]
     ++ [
       inputs.wall-rs.packages.${system}.default
