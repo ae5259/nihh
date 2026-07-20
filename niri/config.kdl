@@ -33,7 +33,11 @@ binds {
   Alt+K { focus-workspace-up; }
   Alt+L { focus-column-right; }
 
-  Mod+Shift+F { toggle-windowed-fullscreen; }
+  Alt+N { spawn-sh "brightnessctl set +10%"; }
+  Alt+M { spawn-sh "brightnessctl set 10%-"; }
+
+  Mod+Shift+F { maximize-column; }
+  Mod+Shift+S { screenshot-window; }
 
   Mod+Q { close-window; }
 }

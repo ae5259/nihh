@@ -86,6 +86,8 @@ in {
 
       gnome-power-manager
       ngrok
+
+      brightnessctl
     ]
     ++ [
       inputs.wall-rs.packages.${system}.default
@@ -94,6 +96,7 @@ in {
       inputs.ayugram.packages.${system}.ayugram-desktop
       inputs.spotiflac.packages.${system}.default
       inputs.xs.packages.${system}.xinux-settings
+      # inputs.quickshell.packages.${system}.default
       inputs.xinux-settings.packages.${system}.xinux-settings
     ];
 }
