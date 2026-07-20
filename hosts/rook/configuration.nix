@@ -41,13 +41,23 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINhQlu6jHF2BLrNvfKy+XXjneqnE3Rz9B2ls6fvw+pWw isakulovdev@gmail.com"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMW/+EvS0eyqdQNWlzO4TxWTy0sVQ2n6pS5YGhB9Vyyt tapnisu@tapnisu-desktop"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIORIwq1Yqp99imb2qtxuwCGoYey+b+Pf1IP9xkKKK7VP root@dell"
     ];
   };
 
   nix.settings.trusted-users = [
     "root"
+    "sae"
+    "dell"
     "builder"
   ];
+
+  nix.sshServe = {
+    enable = true;
+    protocol = "ssh-ng";
+    write = true;
+    trusted = true;
+  };
 
   virtualisation.docker = {
     enable = true;

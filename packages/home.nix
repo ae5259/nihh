@@ -25,6 +25,8 @@ in {
       onefetch # neofetch for git repository
       microfetch # minimal neofetch
       fastfetch # fast neofetch
+      netcat
+      tmux
       # neofetch # neofetch
       # nix related
       # it provides the command `nom` works just like `nix`
