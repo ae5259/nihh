@@ -78,6 +78,10 @@
     enable = false;
   };
 
+  services.tailscale = {
+    enable = true;
+  };
+
   # Essential user groups for kanata
   users.groups.uinput = {};
   users.groups.input = {};
