@@ -8,7 +8,6 @@
     # ./keyboard.nix
     ./network.nix
     ./spicetify.nix
-    ../../niri
   ];
 
   programs.nix-index-database.comma = {
@@ -51,8 +50,8 @@
       qmk
       qmk-udev-rules # the only relevant
       qmk_hid
-      # via
-      # vial
+      via
+      vial
     ];
   };
 
@@ -66,6 +65,7 @@
       ];
 
       trusted-public-keys = [
+        "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
         "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "ayugram-desktop.cachix.org:AZ5EqHrJsAKL5YkZYLPEsb1FdD9QlypUwQ0REcJftgA="
       ];
@@ -76,8 +76,6 @@
         "dell"
         "builder"
       ];
-
-      extra-trusted-public-keys = ["cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="];
 
       experimental-features = "nix-command flakes pipe-operators";
     };
@@ -104,9 +102,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.desktopManager.cinnamon.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {

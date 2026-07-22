@@ -19,6 +19,17 @@
         kamadorueda.alejandra
       ];
 
+      keybindings = [
+        {
+          key = "ctrl+alt+t";
+          command = "type";
+          when = "editorTextFocus";
+          args = { 
+            text= "λ";
+          };
+        }
+      ]; 
+
       userSettings = {
         "chat.agent.enabled" = false;
         "editor.tabSize" = 4;
@@ -179,6 +190,15 @@
             "before" = [
               "leader"
               "o"
+            ];
+            "commands" = [
+              "workbench.view.explorer"
+            ];
+          }
+          {
+            "before" = [
+              "leader"
+              "l"
             ];
             "commands" = [
               "workbench.view.explorer"

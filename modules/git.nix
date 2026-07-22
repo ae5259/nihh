@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   ...
 }: {
   programs.git = {
@@ -21,16 +20,13 @@
       format = "ssh";
     };
 
-    extraConfig = {
-      credential.helper = "store";
-    };
-
     settings = {
       user = {
         name = "akmal";
         email = "isakulovdev@gmail.com";
       };
 
+      credential.helper = "store";
       init.defaultBranch = "main";
 
       core = {

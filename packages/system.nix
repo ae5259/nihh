@@ -1,10 +1,9 @@
 {
-  inputs,
   pkgs,
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    # vial
+    vial
     qemu
 
     git

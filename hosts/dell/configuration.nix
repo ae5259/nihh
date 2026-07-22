@@ -13,6 +13,8 @@
     # Shared configuration
     ../shared
 
+    ../../niri
+
     inputs.nix-data.nixosModules.nix-data
   ];
 

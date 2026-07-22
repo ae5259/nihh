@@ -92,14 +92,14 @@ in {
       brightnessctl
       tldr
     ]
-    ++ [
-      inputs.wall-rs.packages.${system}.default
-      inputs.sl.packages.${system}.default
-      inputs.awzod.packages.${system}.default
-      inputs.ayugram.packages.${system}.ayugram-desktop
-      inputs.spotiflac.packages.${system}.default
-      inputs.xs.packages.${system}.xinux-settings
-      # inputs.quickshell.packages.${system}.default
-      inputs.xinux-settings.packages.${system}.xinux-settings
-    ];
+    ++ (with inputs; [
+      wall-rs.packages.${system}.default
+      sl.packages.${system}.default
+      awzod.packages.${system}.default
+      ayugram.packages.${system}.ayugram-desktop
+      spotiflac.packages.${system}.default
+      xs.packages.${system}.xinux-settings
+      quickshell.packages.${system}.default
+      xinux-settings.packages.${system}.xinux-settings
+    ]);
 }
