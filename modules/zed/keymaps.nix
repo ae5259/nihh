@@ -19,36 +19,6 @@
     };
   }
   {
-    context = "ProjectPanel && not_editing";
-    bindings = {
-      a = "project_panel::NewFile";
-      f = "project_panel::NewDirectory";
-      c = "project_panel::Copy";
-      r = "project_panel::Rename";
-      d = "project_panel::Delete";
-      x = "project_panel::Cut";
-      p = "project_panel::Paste";
-      D = [
-        "project_panel::Delete"
-        {
-          skip_prompt = true;
-        }
-      ];
-    };
-  }
-  {
-    context = "Workspace";
-    bindings = {
-      alt-h = "workspace::ActivatePaneLeft";
-      alt-j = "workspace::ActivatePaneDown";
-      alt-k = "workspace::ActivatePaneUp";
-      alt-l = "workspace::ActivatePaneRight";
-      alt-i = "workspace::ToggleLeftDock";
-      alt-t = "workspace::NewTerminal";
-      cmd-t = "workspace::NewCenterTerminal";
-    };
-  }
-  {
     context = "Editor && vim_mode == visual && !VimWaiting && !VimObject";
     bindings = {
       p = [
@@ -57,12 +27,6 @@
           preserve_clipboard = true;
         }
       ];
-    };
-  }
-  {
-    context = "((FileFinder || FileFinder > Picker > Editor) || FileFinder > Picker > menu)";
-    bindings = {
-      cmd-shift-p = "command_palette::Toggle";
     };
   }
 ]

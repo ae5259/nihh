@@ -88,6 +88,7 @@ in {
 
       gnome-power-manager
       ngrok
+      bruno
 
       brightnessctl
       tldr
