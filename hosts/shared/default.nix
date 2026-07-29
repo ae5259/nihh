@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -59,14 +60,12 @@
     settings = {
       substituters = [
         "https://cache.xinux.uz/"
-        "https://cache.garnix.io"
         "https://ayugram-desktop.cachix.org"
         "https://cache.nixos.org/"
       ];
 
       trusted-public-keys = [
         "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
-        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "ayugram-desktop.cachix.org:AZ5EqHrJsAKL5YkZYLPEsb1FdD9QlypUwQ0REcJftgA="
       ];
       
@@ -84,6 +83,8 @@
   services.cloudflare-warp = {
     enable = true;
   };
+
+  systemd.services.cloudflare-warp.wantedBy = lib.mkForce [];
 
   services.tailscale = {
     enable = true;
