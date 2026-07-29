@@ -82,7 +82,7 @@
   };
 
   services.cloudflare-warp = {
-    enable = false;
+    enable = true;
   };
 
   services.tailscale = {

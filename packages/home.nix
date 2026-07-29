@@ -102,5 +102,6 @@ in {
       xs.packages.${system}.xinux-settings
       quickshell.packages.${system}.default
       xinux-settings.packages.${system}.xinux-settings
+      nunstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.telegram-desktop
     ]);
 }

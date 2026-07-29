@@ -4,6 +4,8 @@
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    # nixpkgs unstable
+    nunstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-nv.url = "github:nixos/nixpkgs/ad798619ae7743933943f22d60acbefb073a251a";
 
     xinux-nixpkgs.url = "git+https://git.oss.uzinfocom.uz/xinux/nixpkgs?ref=nixos-unstable&shallow=1";
