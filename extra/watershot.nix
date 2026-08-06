@@ -5,7 +5,7 @@ pkgs: let
     rev = "4a0812495be35c4c2751bcab6b20d54977bb66a9";
     hash = "sha256-RFConZFmY4VNdk4TWN634WzsAdIxrQiRHgkgCQwqFdc=";
   };
-  cargo = builtins.fromTOML (builtins.readFile (src + "/Cargo.toml"));
+  cargo = fromTOML (builtins.readFile (src + "/Cargo.toml"));
 in
   pkgs.rustPlatform.buildRustPackage {
     pname = cargo.package.name;

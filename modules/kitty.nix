@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
 
-    themeFile = "gruvbox-dark";
+    themeFile = "adwaita_darker";
 
     settings = {
       cursor_trail = 3;

@@ -12,7 +12,7 @@
         color_schemes = {
           ['gruvbox_material_dark_hard'] = {
               foreground = '#D4BE98',
-              background = '#1D2021',
+              background = '#121212',
               cursor_bg = '#D4BE98',
               cursor_border = '#D4BE98',
               cursor_fg = '#1D2021',
