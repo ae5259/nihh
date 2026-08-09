@@ -84,6 +84,7 @@
     nixosConfigurations.sae = import ./hosts/rook inputs;
     nixosConfigurations.t34 = import ./hosts/pad inputs;
     nixosConfigurations.dell = import ./hosts/dell inputs;
+    nixosConfigurations.razor = import ./hosts/razor inputs;
 
     formatter.${system} = pkgs.alejandra;
     # formatter.${system} = pkgs.nixpkgs-fmt;

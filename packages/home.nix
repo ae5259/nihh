@@ -90,6 +90,8 @@ in {
       ngrok
       bruno
 
+      tigervnc
+
       brightnessctl
       tldr
     ]

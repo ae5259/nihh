@@ -24,11 +24,11 @@
           key = "ctrl+alt+t";
           command = "type";
           when = "editorTextFocus";
-          args = { 
-            text= "λ";
+          args = {
+            text = "λ";
           };
         }
-      ]; 
+      ];
 
       userSettings = {
         "chat.agent.enabled" = false;

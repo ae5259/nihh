@@ -74,13 +74,13 @@
 
     buildMachines = [
       {
-        hostName = "sae"; 
+        hostName = "sae";
         protocol = "ssh-ng";
         sshUser = "builder";
         system = "x86_64-linux";
         maxJobs = 16;
         speedFactor = 10;
-        supportedFeatures = [ "big-parallel" "kvm" ];
+        supportedFeatures = ["big-parallel" "kvm"];
       }
     ];
   };
