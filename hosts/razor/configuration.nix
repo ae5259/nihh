@@ -1,6 +1,5 @@
 {
   modulesPath,
-  lib,
   pkgs,
   ...
 } @ args: {
@@ -47,8 +46,7 @@
       trusted-users = [
         "root"
         "sae"
-        "dell"
-        "builder"
+        "razor"
       ];
 
       experimental-features = "nix-command flakes pipe-operators";
@@ -78,11 +76,12 @@
 
   programs.fish.enable = true;
 
-  environment.systemPackages = map lib.lowPrio [
-    pkgs.curl
-    pkgs.gitMinimal
-    pkgs.vim
-    pkgs.alejandra
+  environment.systemPackages = with pkgs; [
+    curl
+    gitMinimal
+    vim
+    alejandra
+    zsh
   ];
 
   users.users.root.openssh.authorizedKeys.keys =
