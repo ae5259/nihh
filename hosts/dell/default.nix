@@ -1,7 +1,6 @@
 {
   nixpkgs,
   home-manager,
-  nixos-hardware,
   nur,
   nid,
   ...
@@ -25,8 +24,6 @@ nixpkgs.lib.nixosSystem {
           nur.modules.homeManager.default
         ];
         useGlobalPkgs = true;
-        # useUserPackages = true;
-        # backupFileExtension = "backup";
 
         extraSpecialArgs = {inherit inputs;};
         users.dell = import ../../home-manager/dell-home.nix;

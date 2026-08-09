@@ -27,8 +27,6 @@ nixpkgs.lib.nixosSystem {
           nur.modules.homeManager.default
         ];
         useGlobalPkgs = true;
-        # useUserPackages = true;
-        # backupFileExtension = "backup";
 
         extraSpecialArgs = {inherit inputs;};
         users.t34 = import ../../home-manager/pad-home.nix;
