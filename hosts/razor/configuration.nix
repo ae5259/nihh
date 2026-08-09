@@ -34,7 +34,7 @@
       "209.126.15.53"
     ];
 
-    firewall.allowedTCPPorts = [22];
+    firewall.allowedTCPPorts = [22 443 80];
   };
 
   nix = {
@@ -61,6 +61,9 @@
       PermitRootLogin = "prohibit-password";
     };
   };
+
+
+  users.users.nginx.extraGroups = [ "acme" ];
 
   users.users.razor = {
     isNormalUser = true;
