@@ -76,6 +76,8 @@
     ];
   };
 
+  programs.fish.enable = true;
+
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
     pkgs.gitMinimal
