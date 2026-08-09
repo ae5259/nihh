@@ -4,6 +4,7 @@
   ...
 } @ args: {
   imports = [
+    ./ngi.nix
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./disk-config.nix
@@ -64,7 +65,7 @@
   users.users.razor = {
     isNormalUser = true;
     description = "razoooooor!!!";
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "docker"];
     shell = pkgs.fish;
 
     home = "/home/razor";
@@ -82,7 +83,13 @@
     vim
     alejandra
     zsh
+    lazygit
   ];
+
+  virtualisation.docker = {
+    enable = true;
+    rootless.enable = true;
+  };
 
   users.users.root.openssh.authorizedKeys.keys =
     [
