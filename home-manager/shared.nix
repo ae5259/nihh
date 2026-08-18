@@ -6,7 +6,6 @@ in {
     ++ [
       ../packages/home.nix
       inputs.nix-xl.homeModules.nix-xl
-      inputs.zen-browser.homeModules.beta
     ];
   # modules = [
   # ];
