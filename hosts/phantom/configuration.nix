@@ -25,11 +25,7 @@
 
   boot.supportedFilesystems = ["ntfs" "exfat" "vfat"];
 
-  services.fprintd.enable = true;
-  services.fprintd.tod.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
-
-  services.thermald.enable = true;
+  services.openssh.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;

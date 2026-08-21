@@ -96,14 +96,7 @@ in {
       tldr
     ]
     ++ (with inputs; [
-      wall-rs.packages.${system}.default
-      sl.packages.${system}.default
-      awzod.packages.${system}.default
       # ayugram.packages.${system}.ayugram-desktop
-      spotiflac.packages.${system}.default
-      xs.packages.${system}.xinux-settings
-      quickshell.packages.${system}.default
-      xinux-settings.packages.${system}.xinux-settings
       nunstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.telegram-desktop
     ]);
 }
