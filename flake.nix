@@ -8,10 +8,6 @@
     nunstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-nv.url = "github:nixos/nixpkgs/ad798619ae7743933943f22d60acbefb073a251a";
 
-    xinux-nixpkgs.url = "git+https://git.oss.uzinfocom.uz/xinux/nixpkgs?ref=nixos-unstable&shallow=1";
-
-    nix-xl.url = "github:PassiveLemon/nix-xl";
-
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,15 +23,6 @@
     nix-data = {
       url = "github:xinux-org/nix-data";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    xinux-modules = {
-      url = "git+https://git.oss.uzinfocom.uz/xinux/modules?ref=main&shallow=1";
     };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
@@ -56,14 +43,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    xinux-settings.url = "git+https://git.oss.uzinfocom.uz/akmal/settings.git";
-
-    uchar.url = "github:uchar-org/cross/uchar/app/latest";
-    # https://github.com/uchar-org/cross/blob/uchar/app/latest/flake.nix
     ayugram.url = "github:ndfined-crp/ayugram-desktop";
 
-    xs.url = "git+https://git.oss.uzinfocom.uz/akmal/settings";
-    spotiflac.url = "github:Superredstone/spotiflac-cli";
     wall-rs.url = "github:aelloc/wall-rs";
     awzod.url = "github:aelloc/awzod";
     sl.url = "github:aelloc/statline";
@@ -81,6 +62,7 @@
     nixosConfigurations.t34 = import ./hosts/pad inputs;
     nixosConfigurations.dell = import ./hosts/dell inputs;
     nixosConfigurations.razor = import ./hosts/razor inputs;
+    nixosConfigurations.phantom = import ./hosts/phantom inputs;
 
     formatter.${system} = pkgs.alejandra;
     # formatter.${system} = pkgs.nixpkgs-fmt;

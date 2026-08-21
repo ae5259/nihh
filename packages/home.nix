@@ -99,7 +99,7 @@ in {
       wall-rs.packages.${system}.default
       sl.packages.${system}.default
       awzod.packages.${system}.default
-      ayugram.packages.${system}.ayugram-desktop
+      # ayugram.packages.${system}.ayugram-desktop
       spotiflac.packages.${system}.default
       xs.packages.${system}.xinux-settings
       quickshell.packages.${system}.default

@@ -62,8 +62,7 @@
     };
   };
 
-
-  users.users.nginx.extraGroups = [ "acme" ];
+  users.users.nginx.extraGroups = ["acme"];
 
   users.users.razor = {
     isNormalUser = true;
