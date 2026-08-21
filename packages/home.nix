@@ -96,7 +96,7 @@ in {
       tldr
     ]
     ++ (with inputs; [
-      # ayugram.packages.${system}.ayugram-desktop
+      ayugram.packages.${system}.ayugram-desktop
       nunstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.telegram-desktop
     ]);
 }
