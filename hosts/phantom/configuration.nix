@@ -41,7 +41,7 @@
 
     buildMachines = [
       {
-        hostName = "sae";
+        hostName = "100.125.245.105";
         protocol = "ssh-ng";
         sshUser = "builder";
         system = "x86_64-linux";
