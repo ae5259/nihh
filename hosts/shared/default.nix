@@ -59,13 +59,11 @@
     settings = {
       substituters = [
         "https://ayugram-desktop.cachix.org"
-        "https://cache.xinux.uz/"
         "https://cache.nixos.org/"
       ];
 
       trusted-public-keys = [
         "ayugram-desktop.cachix.org:AZ5EqHrJsAKL5YkZYLPEsb1FdD9QlypUwQ0REcJftgA="
-        "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
       ];
 
       extra-substituters = ["https://tg-owt.cachix.org"];

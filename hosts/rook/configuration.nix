@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   pkgs,
-  inputs,
   ...
 }: {
   imports = [
@@ -17,20 +16,11 @@
 
     # Shared configuration
     ../shared
-
-    inputs.nix-data.nixosModules.nix-data
   ];
 
   networking.firewall.allowedTCPPorts = [22139];
 
   services.power-profiles-daemon.enable = true;
-
-  programs.nix-data = {
-    enable = true;
-    systemconfig = "/home/sae/nihh/hosts/rook/configuration.nix";
-    flake = "/home/sae/nihh/flake.nix";
-    flakearg = "sae";
-  };
 
   # For Tailscale
   services.openssh.enable = true;
@@ -41,7 +31,7 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINhQlu6jHF2BLrNvfKy+XXjneqnE3Rz9B2ls6fvw+pWw isakulovdev@gmail.com"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMW/+EvS0eyqdQNWlzO4TxWTy0sVQ2n6pS5YGhB9Vyyt tapnisu@tapnisu-desktop"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIORIwq1Yqp99imb2qtxuwCGoYey+b+Pf1IP9xkKKK7VP root@dell"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFuGGbtB4qqTF136DWR7Bqu4jlHIvocJMcuoaHsIf5t8 root@phantom"
     ];
   };
 
@@ -50,6 +40,7 @@
     "sae"
     "dell"
     "builder"
+    "phantom"
   ];
 
   nix.sshServe = {

@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }: {
   imports = [
@@ -12,16 +11,7 @@
     ../../packages/system.nix
     # Shared configuration
     ../shared
-
-    inputs.nix-data.nixosModules.nix-data
   ];
-
-  programs.nix-data = {
-    enable = true;
-    systemconfig = "/home/sae/nihh/hosts/pad/configuration.nix";
-    flake = "/home/sae/nihh/flake.nix";
-    flakearg = "t34";
-  };
 
   boot.supportedFilesystems = ["ntfs" "exfat" "vfat"];
 
@@ -39,6 +29,28 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  nix = {
+    distributedBuilds = true;
+
+    settings = {
+      builders-use-substitutes = true;
+      max-jobs = 0;
+      builders = "@/etc/nix/machines";
+    };
+
+    buildMachines = [
+      {
+        hostName = "sae";
+        protocol = "ssh-ng";
+        sshUser = "builder";
+        system = "x86_64-linux";
+        maxJobs = 16;
+        speedFactor = 10;
+        supportedFeatures = ["big-parallel" "kvm"];
+      }
+    ];
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.phantom = {

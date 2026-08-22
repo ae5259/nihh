@@ -2,10 +2,7 @@
   description = "My nihh configs.";
 
   inputs = {
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    # nixpkgs unstable
-    nunstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-nv.url = "github:nixos/nixpkgs/ad798619ae7743933943f22d60acbefb073a251a";
 
     home-manager = {
@@ -17,11 +14,6 @@
 
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-data = {
-      url = "github:xinux-org/nix-data";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -59,13 +51,10 @@
     pkgs = import nixpkgs {inherit system;};
   in {
     nixosConfigurations.sae = import ./hosts/rook inputs;
-    nixosConfigurations.t34 = import ./hosts/pad inputs;
-    nixosConfigurations.dell = import ./hosts/dell inputs;
     nixosConfigurations.razor = import ./hosts/razor inputs;
     nixosConfigurations.phantom = import ./hosts/phantom inputs;
 
     formatter.${system} = pkgs.alejandra;
-    # formatter.${system} = pkgs.nixpkgs-fmt;
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         self.formatter.${system}

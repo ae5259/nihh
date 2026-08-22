@@ -35,31 +35,12 @@ in {
 
       # productivity
       glow # markdown previewer in terminal
-      emacs # better than nvim :3
       putty
 
       btop # replacement of htop/nmon
-      iotop # io monitoring
-      iftop # network monitoring
-
-      # system call monitoring
-      strace # system call monitoring
-      ltrace # library call monitoring
-      lsof # list open files
-
-      # system tools
-      lm_sensors # for `sensors` command
-      ethtool
-      pciutils # lspci
-      usbutils # lsusb
 
       zoxide # for faster navigation
-      # ayugram-desktop # telegram
-      # spotify # spotify
-      # yandex-music # yandex, idk why do i need it at all
       discord # same with yandex
-      wpsoffice # for docs
-      lite-xl # lightweight code editor
       yazi # terminal vile explorer
       ffmpeg # shame on you if you don't know it
       yt-dlp # youtube video downloader
@@ -72,31 +53,17 @@ in {
       jre
       mpv
 
-      fluffychat
-      poedit
       qbittorrent
-      libinput
 
       spek
-      cmus
-      mpd
-      ncmpcpp
-      jamesdsp
-      audacity
-      keymapp
-      google-chrome
-
       gnome-power-manager
       ngrok
       bruno
 
       tigervnc
-
-      brightnessctl
-      tldr
+      ayugram-desktop
     ]
     ++ (with inputs; [
-      ayugram.packages.${system}.ayugram-desktop
-      nunstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.telegram-desktop
+      # ayugram.packages.${system}.ayugram-desktop
     ]);
 }
