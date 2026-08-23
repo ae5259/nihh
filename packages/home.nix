@@ -4,6 +4,7 @@
   ...
 }: let
   system = pkgs.stdenv.hostPlatform.system;
+  nixpkgs-unstable = import inputs.nixpkgs-unstable {inherit system;};
 in {
   home.packages = with pkgs;
     [
@@ -61,9 +62,8 @@ in {
       bruno
 
       tigervnc
-      ayugram-desktop
     ]
-    ++ (with inputs; [
-      # ayugram.packages.${system}.ayugram-desktop
+    ++ (with nixpkgs-unstable; [
+      ayugram-desktop
     ]);
 }

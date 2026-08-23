@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   ...
 }: {
@@ -15,7 +14,6 @@
 
   programs.neovim = {
     enable = true;
-    # package = inputs.nixpkgs-nv.legacyPackages.${pkgs.stdenv.hostPlatform.system}.neovim-unwrapped;
 
     extraConfig = "";
 
