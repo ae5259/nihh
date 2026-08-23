@@ -2,7 +2,7 @@
   description = "My nihh configs.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-nv.url = "github:nixos/nixpkgs/ad798619ae7743933943f22d60acbefb073a251a";
 
     home-manager = {
