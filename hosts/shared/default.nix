@@ -10,10 +10,6 @@
     ./spicetify.nix
   ];
 
-  programs.nix-index-database.comma = {
-    enable = true;
-  };
-
   services.gnome.gnome-keyring.enable = pkgs.lib.mkForce false;
 
   services.udev = {

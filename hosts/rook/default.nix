@@ -2,7 +2,6 @@
   nixpkgs,
   home-manager,
   nur,
-  nid,
   ...
 } @ inputs:
 nixpkgs.lib.nixosSystem {
@@ -10,7 +9,6 @@ nixpkgs.lib.nixosSystem {
   modules = [
     inputs.spicetify-nix.nixosModules.default
     ./configuration.nix
-    nid.nixosModules.default
 
     nur.modules.nixos.default
     nur.legacyPackages."x86_64-linux".repos.iopq.modules.xraya

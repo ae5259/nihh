@@ -54,7 +54,6 @@
         nixd
         statix
         deadnix
-        nixfmt-tree
       ];
     };
   };
