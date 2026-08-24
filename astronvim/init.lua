@@ -29,4 +29,5 @@ end
 require "lazy_setup"
 require "polish"
 
+-- Colorscheme
 vim.cmd.colorscheme "luna"

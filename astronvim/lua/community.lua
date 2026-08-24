@@ -19,8 +19,6 @@ return {
   { import = "astrocommunity.lsp.ts-error-translator-nvim" },
   { import = "astrocommunity.pack.tailwindcss" },
 
-  -- { import = "astrocommunity.colorscheme.gruvbox-baby" },
-  -- { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.search.grug-far-nvim" },
   -- import/override with your plugins folder
