@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,7 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ayugram.url = "github:ndfined-crp/ayugram-desktop";
     sl.url = "github:aelloc/statline";
   };
 
