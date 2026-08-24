@@ -89,7 +89,6 @@
         "chat.commandCenter.enabled" = false;
         "workbench.layoutControl.enabled" = false;
         "window.commandCenter" = false;
-        "go.toolsManagement.autoUpdate" = true;
         "git.blame.editorDecoration.enabled" = true;
         "zig.zls.enabled" = "on";
 
