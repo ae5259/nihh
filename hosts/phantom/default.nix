@@ -1,7 +1,6 @@
 {
   nixpkgs,
   home-manager,
-  nixos-hardware,
   nur,
   ...
 } @ inputs:
@@ -9,10 +8,8 @@ nixpkgs.lib.nixosSystem {
   specialArgs = {inherit inputs;} // {hostname = "phantom";};
 
   modules = [
-    inputs.spicetify-nix.nixosModules.default
     ./configuration.nix
-
-    nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen6
+    inputs.spicetify-nix.nixosModules.default
 
     nur.modules.nixos.default
     nur.legacyPackages."x86_64-linux".repos.iopq.modules.xraya
