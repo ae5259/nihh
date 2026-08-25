@@ -1,16 +1,14 @@
 {...}: [
   {
-    context = "VimControl && !menu";
+    context = "Editor";
     bindings = {
-      cmd-j = "editor::MoveLineDown";
-      cmd-k = "editor::MoveLineUp";
       shift-k = "editor::Hover";
       "space o" = "tab_switcher::Toggle";
       "space e" = "workspace::ToggleRightDock";
       "space p" = "outline::Toggle";
       "space v" = "editor::GoToDefinitionSplit";
-      "space b" = "editor::GoToDefinition";
-      "space s" = "pane::DeploySearch";
+      "space c" = "pane::CloseActiveItem";
+      "space w" = "workspace::Save";
       "g r" = "editor::FindAllReferences";
       shift-n = "editor::ToggleFold";
       "space f" = "file_finder::Toggle";
