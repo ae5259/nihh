@@ -5,7 +5,6 @@
 }: {
   imports = [
     ./bootloader.nix
-    # ./keyboard.nix
     ./network.nix
     ./spicetify.nix
   ];
