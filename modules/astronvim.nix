@@ -7,11 +7,6 @@
     recursive = true;
   };
 
-  xdg.configFile.kickstart = {
-    source = ../kickstart;
-    recursive = true;
-  };
-
   programs.neovim = {
     enable = true;
 

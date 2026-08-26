@@ -65,5 +65,6 @@ in {
     ]
     ++ (with nixpkgs-unstable; [
       ayugram-desktop
+      telegram-desktop
     ]);
 }

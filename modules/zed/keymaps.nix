@@ -9,6 +9,7 @@
       "space v" = "editor::GoToDefinitionSplit";
       "space c" = "pane::CloseActiveItem";
       "space w" = "workspace::Save";
+      "space q" = "zed::Quit";
       "g r" = "editor::FindAllReferences";
       shift-n = "editor::ToggleFold";
       "space f" = "file_finder::Toggle";
