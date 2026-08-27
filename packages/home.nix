@@ -48,7 +48,6 @@ in {
       obs-studio # video recorder
       feh # lightweight image viewer
       swaybg # wallpaper tool for wayland compositors
-      gradia # screenshot tool
 
       prismlauncher
       jre

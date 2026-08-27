@@ -4,6 +4,7 @@
 imperative way of these things.~~
 
 ~~`Flameshot` has been changed to `Gradia`~~
+No, it's fucking NOT. We're so back with Flameshot again. [Discourse](https://discourse.nixos.org/t/flameshot-aborts-on-wayland-gnome/73682/27)
 
 ~~Spicetify works now~~
 
@@ -139,6 +140,8 @@ it is fun.
 
 ### extra
 
+I don't really have anything valuable except the fonts which can be merged to shared NixOS configurations later.
+
 - [`a_maidens_wish.png`](./extra/a_maidens_wish.png) is my wallpaper on all of
   my devices, which I found from my colleagues Telegram channel.
 - inside [`fonts.nix`](./extra/fonts.nix), I tried to confiure my fonts
@@ -146,7 +149,7 @@ it is fun.
   after some time I decided to give up and use the beautiful Iosevka instead.
 - [`watershot.nix`](./extra/watershot.nix) has Shakhzod's attempt on making
   flameshot alternative, watershot work, but eventually failed, so I used
-  another alternative called `Gradia` anways.
+  another alternative called `Gradia` anways. (Flameshot works now, so I can throw away Gradia)
 
 ### fonts
 
