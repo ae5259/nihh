@@ -43,6 +43,7 @@ in {
       vanilla-dmz
       bibata-cursors
       thunderbird
+      apache-directory-studio
     ]
     ++ (with nixpkgs-unstable; [
       flameshot
