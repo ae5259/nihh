@@ -28,6 +28,7 @@
     };
 
     sl.url = "github:aelloc/statline";
+    humble.url = "github:aelloc/humble";
   };
 
   outputs = {
