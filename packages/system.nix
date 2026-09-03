@@ -16,7 +16,6 @@ in {
       bat
       tokei
 
-      starship
       element-desktop
 
       # fish plugins
