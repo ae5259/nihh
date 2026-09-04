@@ -16,6 +16,8 @@
     recommendedOptimisation = true;
 
     virtualHosts."aelloc.uz" = {
+      serverAliases = [ "www.aelloc.uz" ];
+
       forceSSL = true;
       enableACME = true;
 
