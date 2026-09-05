@@ -52,6 +52,7 @@ in {
       bruno
 
       tigervnc
+      # mullvad-vpn
     ]
     ++ (with nixpkgs-unstable; [
       ayugram-desktop

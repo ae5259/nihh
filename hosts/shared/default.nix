@@ -7,6 +7,7 @@
     ./bootloader.nix
     ./network.nix
     ./spicetify.nix
+    # ./mullvad.nix
   ];
 
   services.gnome.gnome-keyring.enable = pkgs.lib.mkForce false;
